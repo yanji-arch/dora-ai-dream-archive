@@ -180,6 +180,32 @@
             line-height: 1.6;
         }
         
+        /* 标签样式 */
+        .news-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 15px 0;
+        }
+        
+        .news-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #ffebee;
+            color: var(--primary-red);
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(229, 57, 53, 0.2);
+        }
+        
+        .news-tag:hover {
+            background: var(--primary-red);
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
         /* 行动建议 */
         .action-section {
             background: #fff8e1;
@@ -306,6 +332,12 @@
                 <div class="news-item">
                     <h3 class="news-title">Unity发布AI游戏开发套件，支持实时NPC对话生成</h3>
                     <a href="https://blog.unity.com/ai-game-dev-kit" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#开发工具</span>
+                        <span class="news-tag">#游戏AI</span>
+                        <span class="news-tag">#Unity</span>
+                        <span class="news-tag">#NPC系统</span>
+                    </div>
                     <p class="news-desc">Unity推出全新的AI游戏开发套件，集成实时NPC对话生成、场景智能生成和玩家行为预测功能。该套件旨在降低AI游戏开发门槛，让中小团队也能利用AI技术。</p>
                     <div class="news-insight">
                         <div class="insight-label">对People Team的启示</div>
@@ -318,6 +350,12 @@
                 <div class="news-item">
                     <h3 class="news-title">网易伏羲AI在《逆水寒》中实现百万级智能NPC</h3>
                     <a href="https://www.gamelook.com.cn/2026/03/123456" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#智能NPC</span>
+                        <span class="news-tag">#网易伏羲</span>
+                        <span class="news-tag">#游戏体验</span>
+                        <span class="news-tag">#AI规模化</span>
+                    </div>
                     <p class="news-desc">网易伏羲AI实验室宣布，在《逆水寒》游戏中实现了百万级智能NPC系统，每个NPC都有独特的性格、记忆和行为模式，能与玩家进行深度互动。</p>
                     <div class="news-insight">
                         <div class="insight-label">对People Team的启示</div>
@@ -334,6 +372,12 @@
                 <div class="news-item">
                     <h3 class="news-title">麦肯锡报告：AI时代游戏公司的组织架构变革</h3>
                     <a href="https://www.mckinsey.com/gaming-ai-org-change" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#组织变革</span>
+                        <span class="news-tag">#行业报告</span>
+                        <span class="news-tag">#人才战略</span>
+                        <span class="news-tag">#麦肯锡</span>
+                    </div>
                     <p class="news-desc">麦肯锡最新报告指出，AI将重塑游戏公司的组织架构。传统的美术、程序、策划三角结构可能演变为'AI训练师'、'提示工程师'、'体验设计师'等新角色。</p>
                     <div class="news-insight">
                         <div class="insight-label">对People Team的启示</div>

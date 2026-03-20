@@ -180,6 +180,32 @@
             line-height: 1.6;
         }
         
+        /* 标签样式 */
+        .news-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 15px 0;
+        }
+        
+        .news-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #e8f0fe;
+            color: var(--primary-blue);
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(26, 115, 232, 0.2);
+        }
+        
+        .news-tag:hover {
+            background: var(--primary-blue);
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
         /* 页脚 */
         .footer {
             padding: 30px 40px;
@@ -274,6 +300,12 @@
                 <div class="news-item">
                     <h3 class="news-title">谷歌 Gemini 个人智能功能整合 Workspace</h3>
                     <a href="https://blog.google/products-and-platforms/products/search/personal-intelligence-expansion/" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#大模型</span>
+                        <span class="news-tag">#生产力工具</span>
+                        <span class="news-tag">#谷歌生态</span>
+                        <span class="news-tag">#AI集成</span>
+                    </div>
                     <p class="news-desc">谷歌宣布将个人智能功能全面扩展至美国所有用户，打通搜索中的AI模式、Gemini应用和Chrome浏览器。</p>
                     <ul class="news-points">
                         <li><strong>核心功能</strong>：允许用户连接多种谷歌应用，为Gemini的响应提供上下文</li>
@@ -291,6 +323,12 @@
                 <div class="news-item">
                     <h3 class="news-title">Anthropic Claude AI 可生成图表、图示</h3>
                     <a href="https://www.theverge.com/ai-artificial-intelligence/893625/anthropic-claude-ai-charts-diagrams" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#多模态</span>
+                        <span class="news-tag">#数据可视化</span>
+                        <span class="news-tag">#Claude</span>
+                        <span class="news-tag">#AI创作</span>
+                    </div>
                     <p class="news-desc">Anthropic更新了Claude AI，使其现在能够根据对话内容生成自定义图表、图示及其他视觉内容。</p>
                     <ul class="news-points">
                         <li><strong>智能判断</strong>：当Claude判断视觉呈现有助于用户理解时，自动创建可视化信息</li>
@@ -312,6 +350,12 @@
                 <div class="news-item">
                     <h3 class="news-title">Google DeepMind 发布 AGI 衡量框架与悬赏</h3>
                     <a href="https://deepmind.google/blog/measuring-progress-toward-agi-a-cognitive-framework/" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#AGI研究</span>
+                        <span class="news-tag">#评估标准</span>
+                        <span class="news-tag">#行业规范</span>
+                        <span class="news-tag">#学术研究</span>
+                    </div>
                     <p class="news-desc">Google DeepMind发布了一个全新的认知框架，用于衡量通用人工智能（AGI）的进展。</p>
                     <ul class="news-points">
                         <li><strong>核心目标</strong>：更精确地评估大模型的真实能力</li>
@@ -329,6 +373,12 @@
                 <div class="news-item">
                     <h3 class="news-title">普林斯顿团队大幅优化英伟达 B200 算力利用率</h3>
                     <a href="https://www.qbitai.com/2026/03/388815.html" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#AI硬件</span>
+                        <span class="news-tag">#算力优化</span>
+                        <span class="news-tag">#英伟达</span>
+                        <span class="news-tag">#成本效益</span>
+                    </div>
                     <p class="news-desc">普林斯顿大学团队成功将英伟达最强B200芯片的算力利用率从默认的约40%提升至71%。</p>
                     <ul class="news-points">
                         <li><strong>技术突破</strong>：有效减少高达60%的算力浪费</li>
@@ -350,6 +400,12 @@
                 <div class="news-item">
                     <h3 class="news-title">Nothing CEO 预测 AI Agent 将取代智能手机应用</h3>
                     <a href="https://techcrunch.com/2026/03/18/nothing-ceo-carl-pei-says-smartphone-apps-will-disappear-as-ai-agents-take-their-place/" class="news-link" target="_blank">🔗 查看原文</a>
+                    <div class="news-tags">
+                        <span class="news-tag">#AI Agent</span>
+                        <span class="news-tag">#移动生态</span>
+                        <span class="news-tag">#行业预测</span>
+                        <span class="news-tag">#技术颠覆</span>
+                    </div>
                     <p class="news-desc">Nothing CEO Carl Pei大胆预测，AI Agent最终将取代传统的智能手机应用程序。</p>
                     <ul class="news-points">
                         <li><strong>未来愿景</strong>：智能手机将演变为能够理解用户意图并代表用户执行复杂操作的系统</li>
