@@ -497,7 +497,7 @@
                 </div>
                 <div class="system-item">
                     <div class="system-label">访问地址</div>
-                    <div class="system-value" id="site-url">加载中...</div>
+                    <div class="system-value">https://yanji-arch.github.io/dora-ai-dream-archive</div>
                 </div>
                 <div class="system-item">
                     <div class="system-label">更新频率</div>
@@ -587,10 +587,8 @@
             document.getElementById('generate-time').textContent = timeStr;
             
             // 更新网站URL
-            const siteUrl = window.location.hostname === 'localhost' 
-                ? 'https://yanji-arch.github.io/dora-ai-dream-archive'
-                : window.location.origin;
-            document.getElementById('site-url').textContent = siteUrl;
+            // 访问地址已在HTML中硬编码，无需JavaScript设置
+            // https://yanji-arch.github.io/dora-ai-dream-archive
             
             // 添加卡片悬停效果
             const cards = document.querySelectorAll('.daily-card');
