@@ -1,0 +1,25 @@
+# 忽略临时文件
+*.tmp
+*.log
+*.bak
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
+
+# 忽略开发环境文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 忽略IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 忽略本地测试文件
+test/
+temp/

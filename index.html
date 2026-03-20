@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哆啦AI梦日报归档系统</title>
+    <meta name="description" content="哆啦AI梦日报归档系统 - AI行业深度资讯 + 游戏公司OC专属资讯">
+    <meta name="keywords" content="AI日报,游戏AI,OC,企业文化,AI趋势,游戏行业">
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --secondary-blue: #34a8f4;
+            --accent-teal: #00e5ff;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部 */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '🐱';
+            font-size: 120px;
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            opacity: 0.15;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .header .description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+        
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card.ai {
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .stat-card.gaming {
+            border-top: 4px solid #e53935;
+        }
+        
+        .stat-card.system {
+            border-top: 4px solid var(--accent-teal);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .stat-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* 日报分类 */
+        .category-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+        }
+        
+        .section-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .section-desc {
+            margin-left: auto;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        /* 日报列表 */
+        .daily-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .daily-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .daily-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .daily-header {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+        }
+        
+        .daily-date {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .daily-time {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .daily-content {
+            padding: 20px;
+        }
+        
+        .daily-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        .daily-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .daily-stats {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-badge {
+            background: var(--light-bg);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        .daily-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .daily-link:hover {
+            background: var(--secondary-blue);
+        }
+        
+        /* 系统信息 */
+        .system-info {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .system-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .system-title::before {
+            content: '⚙️';
+        }
+        
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .system-item {
+            padding: 15px;
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+        
+        .system-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        
+        .system-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .daily-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .section-desc {
+                margin-left: 0;
+            }
+            
+            .header::before {
+                font-size: 80px;
+                top: 10px;
+                right: 20px;
+            }
+        }
+        
+        /* 打印样式 */
+        @media print {
+            .header {
+                background: white !important;
+                color: black !important;
+                border-bottom: 2px solid black;
+            }
+            
+            .daily-card, .system-info {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .daily-link {
+                color: black;
+                text-decoration: underline;
+                background: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>🐱 哆啦AI梦日报归档系统</h1>
+            <div class="subtitle">从22世纪的口袋里，掏出AI的未来</div>
+            <div class="description">
+                双日报系统完整归档 · AI行业深度资讯 + 游戏公司OC专属资讯 · 每日自动更新
+            </div>
+        </div>
+        
+        <!-- 统计卡片 -->
+        <div class="stats-grid">
+            <div class="stat-card ai">
+                <div class="stat-icon">🚀</div>
+                <div class="stat-value" id="ai-count">1</div>
+                <div class="stat-label">AI行业日报</div>
+                <div class="stat-desc">宏观AI技术前沿，保持对AI整体发展的敏感度</div>
+            </div>
+            
+            <div class="stat-card gaming">
+                <div class="stat-icon">🎮</div>
+                <div class="stat-value" id="gaming-count">1</div>
+                <div class="stat-label">游戏OC日报</div>
+                <div class="stat-desc">游戏公司OC负责人专属，AI+游戏深度洞察</div>
+            </div>
+            
+            <div class="stat-card system">
+                <div class="stat-icon">📅</div>
+                <div class="stat-value" id="latest-date">2026-03-20</div>
+                <div class="stat-label">最新更新</div>
+                <div class="stat-desc">系统已运行，明日10:00/10:30自动推送</div>
+            </div>
+        </div>
+        
+        <!-- AI行业日报 -->
+        <div class="category-section">
+            <div class="section-header">
+                <div class="section-icon">🚀</div>
+                <h2 class="section-title">AI行业深度资讯</h2>
+                <div class="section-desc">每日10:00推送 · 宏观技术前沿</div>
+            </div>
+            
+            <div class="daily-grid" id="ai-daily-list">
+                <!-- AI日报卡片将通过JavaScript动态加载 -->
+                <div class="daily-card">
+                    <div class="daily-header">
+                        <div class="daily-date">2026-03-20</div>
+                        <div class="daily-time">10:00 推送</div>
+                    </div>
+                    <div class="daily-content">
+                        <div class="daily-title">AI行业深度日报</div>
+                        <div class="daily-desc">
+                            谷歌Gemini整合Workspace、Anthropic Claude生成图表、DeepMind AGI衡量框架、英伟达B200算力优化、AI Agent取代App预测、小米万亿参数模型...
+                        </div>
+                        <div class="daily-stats">
+                            <span class="stat-badge">📊 3323字符</span>
+                            <span class="stat-badge">🔗 7个链接</span>
+                        </div>
+                        <a href="daily/ai/2026-03-20.html" class="daily-link" target="_blank">查看完整内容 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 游戏OC日报 -->
+        <div class="category-section">
+            <div class="section-header">
+                <div class="section-icon">🎮</div>
+                <h2 class="section-title">游戏公司OC专属资讯</h2>
+                <div class="section-desc">每日10:30推送 · 游戏AI深度应用</div>
+            </div>
+            
+            <div class="daily-grid" id="gaming-daily-list">
+                <!-- 游戏OC日报卡片将通过JavaScript动态加载 -->
+                <div class="daily-card">
+                    <div class="daily-header">
+                        <div class="daily-date">2026-03-20</div>
+                        <div class="daily-time">10:30 推送</div>
+                    </div>
+                    <div class="daily-content">
+                        <div class="daily-title">游戏AI日报</div>
+                        <div class="daily-desc">
+                            Unity AI开发套件、网易伏羲百万级智能NPC、麦肯锡组织变革报告、AI人才发展平台、Character.ai游戏分身、腾讯QClaw垂直场景...
+                        </div>
+                        <div class="daily-stats">
+                            <span class="stat-badge">📊 3264字符</span>
+                            <span class="stat-badge">🎯 5个分类</span>
+                        </div>
+                        <a href="daily/gaming/2026-03-20.html" class="daily-link" target="_blank">查看完整内容 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 系统信息 -->
+        <div class="system-info">
+            <h3 class="system-title">系统配置与使用说明</h3>
+            <div class="system-grid">
+                <div class="system-item">
+                    <div class="system-label">推送时间</div>
+                    <div class="system-value">AI日报: 10:00 · 游戏OC: 10:30</div>
+                </div>
+                <div class="system-item">
+                    <div class="system-label">推送方式</div>
+                    <div class="system-value">飞书自动推送 + GitHub Pages归档</div>
+                </div>
+                <div class="system-item">
+                    <div class="system-label">数据源</div>
+                    <div class="system-value">科技媒体、官方博客、学术平台</div>
+                </div>
+                <div class="system-item">
+                    <div class="system-label">归档方式</div>
+                    <div class="system-value">GitHub Pages自动部署</div>
+                </div>
+                <div class="system-item">
+                    <div class="system-label">访问地址</div>
+                    <div class="system-value" id="site-url">加载中...</div>
+                </div>
+                <div class="system-item">
+                    <div class="system-label">更新频率</div>
+                    <div class="system-value">每日自动生成新版本</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #e8f0fe; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
+                <strong>📖 使用说明：</strong>
+                <ol style="margin: 10px 0 0 20px;">
+                    <li>点击日报卡片查看完整内容</li>
+                    <li>所有日报永久保存，可随时回看</li>
+                    <li>支持手机、平板、电脑全设备访问</li>
+                    <li>每日自动更新，无需手动操作</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            <p><strong>🐱 哆啦AI梦日报归档系统 · GitHub Pages版本</strong></p>
+            <p>生成时间: <span id="generate-time">2026年03月20日 15:45</span></p>
+            <p>© 2026 哆啦AI梦 · AI前沿导航机器猫 · 为游戏公司OC负责人提供深度洞察</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #999;">
+                本网站通过GitHub Pages自动部署，所有内容永久保存。
+                如需最新日报，请关注飞书推送。
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // 日报数据
+        const dailyData = {
+            ai: [
+                {
+                    date: '2026-03-20',
+                    time: '10:00',
+                    title: 'AI行业深度日报',
+                    description: '谷歌Gemini整合Workspace、Anthropic Claude生成图表、DeepMind AGI衡量框架、英伟达B200算力优化、AI Agent取代App预测、小米万亿参数模型...',
+                    stats: ['📊 3323字符', '🔗 7个链接'],
+                    link: 'daily/ai/2026-03-20.html'
+                }
+            ],
+            gaming: [
+                {
+                    date: '2026-03-20',
+                    time: '10:30',
+                    title: '游戏AI日报',
+                    description: 'Unity AI开发套件、网易伏羲百万级智能NPC、麦肯锡组织变革报告、AI人才发展平台、Character.ai游戏分身、腾讯QClaw垂直场景...',
+                    stats: ['📊 3264字符', '🎯 5个分类'],
+                    link: 'daily/gaming/2026-03-20.html'
+                }
+            ]
+        };
+        
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新统计
+            document.getElementById('ai-count').textContent = dailyData.ai.length;
+            document.getElementById('gaming-count').textContent = dailyData.gaming.length;
+            
+            // 更新最新日期
+            const latestDate = Math.max(
+                ...dailyData.ai.map(d => new Date(d.date).getTime()),
+                ...dailyData.gaming.map(d => new Date(d.date).getTime())
+            );
+            if (latestDate > 0) {
+                const dateStr = new Date(latestDate).toISOString().split('T')[0];
+                document.getElementById('latest-date').textContent = dateStr;
+            }
+            
+            // 渲染AI日报列表
+            renderDailyList('ai-daily-list', dailyData.ai);
+            
+            // 渲染游戏OC日报列表
+            renderDailyList('gaming-daily-list', dailyData.gaming);
+            
+            // 更新生成时间
+            const now = new Date();
+            const timeStr = now.toLocaleString('zh-CN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            document.getElementById('generate-time').textContent = timeStr;
+            
+            // 更新网站URL
+            const siteUrl = window.location.hostname === 'localhost' 
+                ? 'https://[你的用户名].github.io/dora-ai-dream-archive'
+                : window.location.origin;
+            document.getElementById('site-url').textContent = siteUrl;
+            
+            // 添加卡片悬停效果
+            const cards = document.querySelectorAll('.daily-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // 外部链接新窗口打开
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            });
+        });
+        
+        // 渲染日报列表
+        function renderDailyList(containerId, data) {
+            const container = document.getElementById(containerId);
+            if (!container || !data.length) return;
+            
+            // 按日期倒序排序
+            data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // 清空容器（保留第一个示例卡片）
+            const firstCard = container.querySelector('.daily-card');
+            if (firstCard) {
+                container.innerHTML = '';
+            }
+            
+            // 渲染每个日报卡片
+            data.forEach(daily => {
+                const card = document.createElement('div');
+                card.className = 'daily-card';
+                card.innerHTML = `
+                    <div class="daily-header">
+                        <div class="daily-date">${daily.date}</div>
+                        <div class="daily-time">${daily.time} 推送</div>
+                    </div>
+                    <div class="daily-content">
+                        <div class="daily-title">${daily.title}</div>
+                        <div class="daily-desc">${daily.description}</div>
+                        <div class="daily-stats">
+                            ${daily.stats.map(stat => `<span class="stat-badge">${stat}</span>`).join('')}
+                        </div>
+                        <a href="${daily.link}" class="daily-link" target="_blank">查看完整内容 →</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+        
+        // 未来功能：从JSON文件加载数据
+        async function loadDailyData() {
+            try {
+                const response = await fetch('data/daily-index.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    // 更新dailyData并重新渲染
+                    Object.assign(dailyData, data);
+                    document.getElementById('ai-count').textContent = data.ai.length;
+                    document.getElementById('gaming-count').textContent = data.gaming.length;
+                    renderDailyList('ai-daily-list', data.ai);
+                    renderDailyList('gaming-daily-list', data.gaming);
+                }
+            } catch (error) {
+                console.log('使用内置数据，JSON加载失败:', error);
+            }
+        }
+        
+        // 页面加载后尝试加载外部数据
+        setTimeout(loadDailyData, 100);
+    </script>
