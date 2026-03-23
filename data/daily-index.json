@@ -1,6 +1,14 @@
 {
   "ai": [
     {
+      "date": "2026-03-23",
+      "time": "11:55",
+      "title": "AI行业日报",
+      "description": "OpenAI GPT-5企业版游戏优化、微软Copilot for Gaming上线、斯坦福游戏AI安全框架、MIT AI游戏平衡性系统、欧盟游戏AI监管草案、游戏AI投资Q1增长300%、Meta开源GameAI Kit、英伟达游戏专用AI芯片...",
+      "stats": ["📊 3036字符", "🔗 8个链接", "⚠️ 紧急补发"],
+      "link": "daily/ai/2026-03-23.html"
+    },
+    {
       "date": "2026-03-20",
       "time": "10:00",
       "title": "AI行业日报",
@@ -11,6 +19,14 @@
   ],
   "gaming": [
     {
+      "date": "2026-03-23",
+      "time": "11:56",
+      "title": "AI+游戏日报",
+      "description": "腾讯《王者荣耀》AI教练系统、网易《永劫无间》AI观战解说、米哈游AI组织架构白皮书、游戏AI人才薪酬报告、字节跳动'游聊'AI社交平台、B站AI游戏陪玩功能、腾讯AI Lab世界生成技术、Unity收购DreamScape...",
+      "stats": ["📊 3631字符", "🎯 6个分类", "⚠️ 紧急补发"],
+      "link": "daily/gaming/2026-03-23.html"
+    },
+    {
       "date": "2026-03-20",
       "time": "10:30",
       "title": "AI+游戏日报",
@@ -20,9 +36,9 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-20T15:50:00Z",
-    "totalAI": 1,
-    "totalGaming": 1,
+    "lastUpdated": "2026-03-23T12:05:00Z",
+    "totalAI": 2,
+    "totalGaming": 2,
     "siteName": "哆啦AI梦日报归档系统",
     "version": "1.0.0"
   }
