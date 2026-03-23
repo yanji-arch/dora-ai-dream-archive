@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>哆啦AI梦日报归档系统</title>
-    <meta name="description" content="哆啦AI梦日报归档系统 - AI行业日报 + AI+游戏日报">
-    <meta name="keywords" content="AI日报,AI+游戏日报,AI趋势,游戏AI,组织发展,人才战略">
+    <meta name="description" content="哆啦AI梦日报归档系统 - AI行业日报 + 游戏AI日报">
+    <meta name="keywords" content="AI日报,游戏AI日报,AI趋势,游戏AI,组织发展,人才战略">
     <style>
         :root {
             --primary-blue: #1a73e8;
@@ -402,7 +402,7 @@
             <h1>🐱 哆啦AI梦日报归档系统</h1>
             <div class="subtitle">从22世纪的口袋里，为你掏出明天的答案</div>
             <div class="description">
-                双日报系统完整归档 · AI行业日报 / AI+游戏日报 · 每日自动更新 · 智能查询
+                双日报系统完整归档 · AI行业日报 / 游戏AI日报 · 每日自动更新 · 智能查询
             </div>
         </div>
         
@@ -418,7 +418,7 @@
             <div class="stat-card gaming">
                 <div class="stat-icon">🎮</div>
                 <div class="stat-value" id="gaming-count">1</div>
-                <div class="stat-label">AI+游戏日报</div>
+                <div class="stat-label">游戏AI日报</div>
                 <div class="stat-desc">AI在游戏领域的应用，组织发展与人才战略视角</div>
             </div>
             
@@ -460,23 +460,23 @@
             </div>
         </div>
         
-        <!-- AI+游戏日报 -->
+        <!-- 游戏AI日报 -->
         <div class="category-section">
             <div class="section-header">
                 <div class="section-icon">🎮</div>
-                <h2 class="section-title">AI+游戏日报</h2>
+                <h2 class="section-title">游戏AI日报</h2>
                 <div class="section-desc">每日10:30推送 · AI在游戏领域的应用</div>
             </div>
             
             <div class="daily-grid" id="gaming-daily-list">
-                <!-- AI+游戏日报卡片将通过JavaScript动态加载 -->
+                <!-- 游戏AI日报卡片将通过JavaScript动态加载 -->
                 <div class="daily-card">
                     <div class="daily-header">
                         <div class="daily-date">2026-03-20</div>
                         <div class="daily-time">10:30 推送</div>
                     </div>
                     <div class="daily-content">
-                        <div class="daily-title">AI+游戏日报</div>
+                        <div class="daily-title">游戏AI日报</div>
                         <div class="daily-desc">
                             Unity AI开发套件、网易伏羲百万级智能NPC、麦肯锡组织变革报告、AI人才发展平台、Character.ai游戏分身、腾讯QClaw垂直场景...
                         </div>
@@ -496,7 +496,7 @@
             <div class="system-grid">
                 <div class="system-item">
                     <div class="system-label">推送时间</div>
-                    <div class="system-value">AI日报: 10:00 · AI+游戏日报: 10:30</div>
+                    <div class="system-value">AI日报: 10:00 · 游戏AI日报: 10:30</div>
                 </div>
                 <div class="system-item">
                     <div class="system-label">推送方式</div>
@@ -607,7 +607,7 @@
             // 渲染AI日报列表
             renderDailyList('ai-daily-list', dailyData.ai);
             
-            // 渲染AI+游戏日报列表
+            // 渲染游戏AI日报列表
             renderDailyList('gaming-daily-list', dailyData.gaming);
             
             // 更新生成时间

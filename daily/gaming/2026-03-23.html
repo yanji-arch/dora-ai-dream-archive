@@ -5,133 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>游戏AI日报 · 2026年03月23日 - 哆啦AI梦</title>
     <link rel="stylesheet" href="../../assets/style.css">
+    
+
     <style>
-        .daily-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        .daily-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #e74c3c;
-        }
-        .daily-title {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .daily-subtitle {
-            font-size: 1.5em;
-            color: #e74c3c;
-            margin-bottom: 10px;
-        }
-        .daily-date {
-            font-size: 1.2em;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-        }
-        .daily-meta {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 4px solid #e74c3c;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section-title {
-            font-size: 1.8em;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eaeaea;
-        }
-        .item {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid #e74c3c;
-        }
-        .item-title {
-            font-size: 1.4em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .item-link {
-            color: #e74c3c;
-            text-decoration: none;
-            font-size: 0.9em;
+        /* 标签系统增强样式 */
+        .item-tag {
             display: inline-block;
-            margin-bottom: 15px;
-        }
-        .item-link:hover {
-            text-decoration: underline;
-        }
-        .item-content {
-            margin-bottom: 15px;
-        }
-        .item-insight {
-            background: #fff8e1;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 15px;
-            border-left: 3px solid #f39c12;
-        }
-        .insight-title {
-            font-weight: bold;
-            color: #d35400;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+            margin-right: 8px;
             margin-bottom: 8px;
+            transition: all 0.2s ease;
         }
-        .community-note {
-            background: #e8f4fd;
-            padding: 12px;
-            border-radius: 6px;
-            margin: 10px 0;
-            border-left: 3px solid #3498db;
-            font-style: italic;
+        
+        .item-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .back-link {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 10px 20px;
-            background: #e74c3c;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background 0.3s;
+        
+        /* AI日报标签颜色 */
+        .tag-big-model { background: linear-gradient(135deg, #e3f2fd, #bbdefb); color: #0d47a1; border: 1px solid #90caf9; }
+        .tag-gaming-ai { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #4a148c; border: 1px solid #ce93d8; }
+        .tag-enterprise { background: linear-gradient(135deg, #e8f5e8, #c8e6c9); color: #1b5e20; border: 1px solid #a5d6a7; }
+        .tag-dev-tools { background: linear-gradient(135deg, #fff3e0, #ffcc80); color: #e65100; border: 1px solid #ffb74d; }
+        .tag-ai-safety { background: linear-gradient(135deg, #ffebee, #ffcdd2); color: #b71c1c; border: 1px solid #ef9a9a; }
+        .tag-research { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #4a148c; border: 1px solid #ce93d8; }
+        .tag-rl { background: linear-gradient(135deg, #e1f5fe, #b3e5fc); color: #01579b; border: 1px solid #81d4fa; }
+        .tag-regulation { background: linear-gradient(135deg, #e8eaf6, #c5cae9); color: #1a237e; border: 1px solid #9fa8da; }
+        .tag-investment { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); color: #004d40; border: 1px solid #80cbc4; }
+        .tag-open-source { background: linear-gradient(135deg, #fce4ec, #f8bbd9); color: #880e4f; border: 1px solid #f48fb1; }
+        .tag-hardware { background: linear-gradient(135deg, #fff8e1, #ffecb3); color: #ff6f00; border: 1px solid #ffe082; }
+        .tag-microsoft { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #7b1fa2; border: 1px solid #ce93d8; }
+        .tag-integration { background: linear-gradient(135deg, #e8eaf6, #c5cae9); color: #3949ab; border: 1px solid #9fa8da; }
+        .tag-ethics { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #7b1fa2; border: 1px solid #ce93d8; }
+        .tag-standford { background: linear-gradient(135deg, #e8f5e8, #c8e6c9); color: #2e7d32; border: 1px solid #a5d6a7; }
+        .tag-game-design { background: linear-gradient(135deg, #fff3e0, #ffcc80); color: #ef6c00; border: 1px solid #ffb74d; }
+        .tag-mit { background: linear-gradient(135deg, #e3f2fd, #bbdefb); color: #1565c0; border: 1px solid #90caf9; }
+        .tag-automation { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #7b1fa2; border: 1px solid #ce93d8; }
+        .tag-policy { background: linear-gradient(135deg, #e8eaf6, #c5cae9); color: #3949ab; border: 1px solid #9fa8da; }
+        .tag-eu { background: linear-gradient(135deg, #e3f2fd, #bbdefb); color: #0d47a1; border: 1px solid #90caf9; }
+        .tag-compliance { background: linear-gradient(135deg, #e8f5e8, #c8e6c9); color: #2e7d32; border: 1px solid #a5d6a7; }
+        .tag-market { background: linear-gradient(135deg, #fff3e0, #ffcc80); color: #ef6c00; border: 1px solid #ffb74d; }
+        .tag-data { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); color: #00695c; border: 1px solid #80cbc4; }
+        .tag-growth { background: linear-gradient(135deg, #e8f5e8, #c8e6c9); color: #2e7d32; border: 1px solid #a5d6a7; }
+        .tag-game-dev { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #7b1fa2; border: 1px solid #ce93d8; }
+        .tag-meta { background: linear-gradient(135deg, #e3f2fd, #bbdefb); color: #1565c0; border: 1px solid #90caf9; }
+        .tag-community { background: linear-gradient(135deg, #fff3e0, #ffcc80); color: #ef6c00; border: 1px solid #ffb74d; }
+        .tag-nvidia { background: linear-gradient(135deg, #76ff03, #64dd17); color: #1b5e20; border: 1px solid #aeea00; }
+        .tag-performance { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); color: #00695c; border: 1px solid #80cbc4; }
+        .tag-gaming { background: linear-gradient(135deg, #ffebee, #ffcdd2); color: #c62828; border: 1px solid #ef9a9a; }
+        
+        /* 游戏AI日报标签颜色 */
+        .tag-gaming { background: linear-gradient(135deg, #ffebee, #ffcdd2); color: #c62828; border: 1px solid #ef9a9a; }
+        .tag-tencent { background: linear-gradient(135deg, #e3f2fd, #bbdefb); color: #1565c0; border: 1px solid #90caf9; }
+        .tag-netease { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #7b1fa2; border: 1px solid #ce93d8; }
+        .tag-org-change { background: linear-gradient(135deg, #e8f5e8, #c8e6c9); color: #2e7d32; border: 1px solid #a5d6a7; }
+        .tag-talent { background: linear-gradient(135deg, #fff3e0, #ffcc80); color: #ef6c00; border: 1px solid #ffb74d; }
+        .tag-ai-social { background: linear-gradient(135deg, #fce4ec, #f8bbd9); color: #ad1457; border: 1px solid #f48fb1; }
+        .tag-bilibili { background: linear-gradient(135deg, #e3f2fd, #bbdefb); color: #0d47a1; border: 1px solid #90caf9; }
+        .tag-world-gen { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); color: #00695c; border: 1px solid #80cbc4; }
+        .tag-m-a { background: linear-gradient(135deg, #fff3e0, #ffcc80); color: #ef6c00; border: 1px solid #ffb74d; }
+        .tag-employer { background: linear-gradient(135deg, #f3e5f5, #e1bee7); color: #7b1fa2; border: 1px solid #ce93d8; }
+        
+        /* 数据来源样式 */
+        .item-source {
+            margin: 15px 0;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+            font-size: 0.9em;
+            color: #666;
         }
-        .back-link:hover {
-            background: #c0392b;
+        
+        .item-source strong {
+            color: #2c3e50;
         }
+        
+        /* 响应式调整 */
         @media (max-width: 768px) {
-            .daily-content {
-                padding: 15px;
-            }
-            .daily-title {
-                font-size: 2em;
-            }
-            .daily-subtitle {
-                font-size: 1.3em;
-            }
-            .section-title {
-                font-size: 1.5em;
+            .item-tag {
+                padding: 3px 8px;
+                font-size: 0.8em;
+                margin-right: 5px;
+                margin-bottom: 5px;
             }
         }
     </style>
+    
 </head>
 <body>
     <div class="daily-content">
         <div class="daily-header">
             <h1 class="daily-title">游戏AI日报 · 2026年03月23日</h1>
-            <div class="daily-subtitle">游戏AI前沿动态与组织洞察</div>
+            <div class="daily-subtitle">游戏AI日报 · 游戏行业AI应用与趋势分析</div>
             <div class="daily-date">哆啦AI梦 · 来自22世纪的AI导航伙伴</div>
             <div class="daily-meta">
                 <strong>📅 发布日期：</strong>2026年03月23日 11:56<br>
