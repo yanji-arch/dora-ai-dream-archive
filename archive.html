@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日报归档查询 - 哆啦AI梦</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .archive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .archive-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4a90e2;
+        }
+        
+        .archive-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .archive-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .search-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .search-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .search-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .search-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .search-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .search-input, .search-select {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus, .search-select:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        
+        .search-button {
+            padding: 12px 30px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        
+        .search-button:hover {
+            background: #357ae8;
+        }
+        
+        .timeline-section {
+            margin-bottom: 50px;
+        }
+        
+        .timeline-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #4a90e2;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: #4a90e2;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px #4a90e2;
+        }
+        
+        .timeline-date {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #4a90e2;
+        }
+        
+        .daily-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .daily-link-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #e74c3c;
+            transition: transform 0.2s;
+        }
+        
+        .daily-link-card.ai {
+            border-left-color: #4a90e2;
+        }
+        
+        .daily-link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .daily-link-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .daily-link-desc {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .daily-link-button {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+        
+        .daily-link-button.ai {
+            background: #4a90e2;
+        }
+        
+        .daily-link-button.gaming {
+            background: #e74c3c;
+        }
+        
+        .daily-link-button:hover {
+            opacity: 0.9;
+        }
+        
+        .stats-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+        
+        .stats-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #4a90e2;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .back-home {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .back-home:hover {
+            background: #357ae8;
+        }
+        
+        @media (max-width: 768px) {
+            .archive-container {
+                padding: 15px;
+            }
+            
+            .archive-title {
+                font-size: 2em;
+            }
+            
+            .search-controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 20px;
+            }
+            
+            .timeline-item::before {
+                left: -28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="archive-container">
+        <div class="archive-header">
+            <h1 class="archive-title">📚 日报归档查询系统</h1>
+            <div class="archive-subtitle">哆啦AI梦 · 历史日报完整归档与智能查询</div>
+            <p>在这里，您可以查询所有历史日报，分析趋势变化，追踪AI发展脉络</p>
+        </div>
+        
+        <div class="search-section">
+            <h2 class="search-title">🔍 智能搜索与筛选</h2>
+            <div class="search-controls">
+                <div class="search-group">
+                    <label class="search-label">按日期范围查询</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="date" class="search-input" id="start-date" value="2026-03-20">
+                        <span style="align-self: center;">至</span>
+                        <input type="date" class="search-input" id="end-date" value="2026-03-23">
+                    </div>
+                </div>
+                
+                <div class="search-group">
+                    <label class="search-label">按日报类型筛选</label>
+                    <select class="search-select" id="daily-type">
+                        <option value="all">全部日报</option>
+                        <option value="ai">AI行业日报</option>
+                        <option value="gaming">游戏AI日报</option>
+                    </select>
+                </div>
+                
+                <div class="search-group">
+                    <label class="search-label">按关键词搜索</label>
+                    <input type="text" class="search-input" id="keyword-search" placeholder="输入关键词，如：GPT-5、Unity、投资...">
+                </div>
+            </div>
+            <button class="search-button" onclick="searchDaily()">开始搜索</button>
+        </div>
+        
+        <div class="timeline-section">
+            <h2 class="timeline-title">📅 日报时间线（按日期倒序）</h2>
+            <div class="timeline" id="daily-timeline">
+                <!-- 时间线内容由JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <div class="stats-section">
+            <h2 class="stats-title">📊 归档统计</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-days">2</div>
+                    <div class="stat-label">归档天数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="total-ai">2</div>
+                    <div class="stat-label">AI日报数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="total-gaming">2</div>
+                    <div class="stat-label">游戏AI日报数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="total-articles">18</div>
+                    <div class="stat-label">总文章数量</div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-home">← 返回首页</a>
+    </div>
+    
+    <script>
+        // 日报数据
+        const dailyData = {
+            "2026-03-23": {
+                ai: {
+                    title: "AI行业日报",
+                    description: "OpenAI GPT-5企业版游戏优化、微软Copilot for Gaming上线、斯坦福游戏AI安全框架、MIT AI游戏平衡性系统、欧盟游戏AI监管草案、游戏AI投资Q1增长300%、Meta开源GameAI Kit、英伟达游戏专用AI芯片...",
+                    link: "daily/ai/2026-03-23.html",
+                    stats: ["📊 3036字符", "🔗 8个链接", "⚠️ 紧急补发"],
+                    articles: 8
+                },
+                gaming: {
+                    title: "游戏AI日报",
+                    description: "腾讯《王者荣耀》AI教练系统、网易《永劫无间》AI观战解说、AI组织架构实践、游戏AI人才趋势、AI社交平台创新、游戏陪玩AI技术、世界生成技术突破、引擎厂商AI整合...",
+                    link: "daily/gaming/2026-03-23.html",
+                    stats: ["📊 3631字符", "🎯 6个分类", "⚠️ 紧急补发"],
+                    articles: 10
+                }
+            },
+            "2026-03-20": {
+                ai: {
+                    title: "AI行业深度日报",
+                    description: "谷歌Gemini整合Workspace、Anthropic Claude生成图表、DeepMind AGI衡量框架、英伟达B200算力优化、AI Agent取代App预测、小米万亿参数模型...",
+                    link: "daily/ai/2026-03-20.html",
+                    stats: ["📊 3323字符", "🔗 7个链接"],
+                    articles: 7
+                },
+                gaming: {
+                    title: "游戏AI日报",
+                    description: "Unity AI开发套件、网易伏羲百万级智能NPC、麦肯锡组织变革报告、AI人才发展平台、Character.ai游戏分身、腾讯QClaw垂直场景...",
+                    link: "daily/gaming/2026-03-20.html",
+                    stats: ["📊 3264字符", "🎯 5个分类"],
+                    articles: 5
+                }
+            }
+        };
+        
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTimeline();
+            updateStats();
+            setupSearch();
+        });
+        
+        // 渲染时间线
+        function renderTimeline(filteredData = dailyData) {
+            const timeline = document.getElementById('daily-timeline');
+            timeline.innerHTML = '';
+            
+            // 按日期倒序排序
+            const dates = Object.keys(filteredData).sort((a, b) => new Date(b) - new Date(a));
+            
+            dates.forEach(date => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                
+                const dateObj = new Date(date);
+                const dateStr = dateObj.toLocaleDateString('zh-CN', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    weekday: 'long'
+                });
+                
+                let content = `
+                    <div class="timeline-date">${dateStr}</div>
+                    <div class="timeline-content">
+                        <div class="daily-links">
+                `;
+                
+                // 添加AI日报
+                if (filteredData[date].ai) {
+                    content += `
+                        <div class="daily-link-card ai">
+                            <div class="daily-link-title">🤖 ${filteredData[date].ai.title}</div>
+                            <div class="daily-link-desc">${filteredData[date].ai.description}</div>
+                            <div style="margin-bottom: 10px; font-size: 0.85em; color: #666;">
+                                ${filteredData[date].ai.stats.join(' · ')}
+                            </div>
+                            <a href="${filteredData[date].ai.link}" class="daily-link-button ai" target="_blank">查看AI日报</a>
+                        </div>
+                    `;
+                }
+                
+                // 添加游戏AI日报
+                if (filteredData[date].gaming) {
+                    content += `
+                        <div class="daily-link-card">
+                            <div class="daily-link-title">🎮 ${filteredData[date].gaming.title}</div>
+                            <div class="daily-link-desc">${filteredData[date].gaming.description}</div>
+                            <div style="margin-bottom: 10px; font-size: 0.85em; color: #666;">
+                                ${filteredData[date].gaming.stats.join(' · ')}
+                            </div>
+                            <a href="${filteredData[date].gaming.link}" class="daily-link-button gaming" target="_blank">查看游戏AI日报</a>
+                        </div>
+                    `;
+                }
+                
+                content += `
+                        </div>
+                    </div>
+                `;
+                
+                item.innerHTML = content;
+                timeline.appendChild(item);
+            });
+        }
+        
+        // 更新统计信息
+        function updateStats() {
+            const dates = Object.keys(dailyData);
+            const totalAI = dates.reduce((sum, date) => sum + (dailyData[date].ai ? 1 : 0), 0);
+            const totalGaming = dates.reduce((sum, date) => sum + (dailyData[date].gaming ? 1 : 0), 0);
+            const totalArticles = dates.reduce((sum, date) => {
+                let count = 0;
+                if (dailyData[date].ai) count += dailyData[date].ai.articles;
+                if (dailyData[date].gaming) count += dailyData[date].gaming.articles;
+                return sum + count;
+            }, 0);
+            
+            document.getElementById('total-days').textContent = dates.length;
+            document.getElementById('total-ai').textContent = totalAI;
+            document.getElementById('total-gaming').textContent = totalGaming;
+            document.getElementById('total-articles').textContent = totalArticles;
+        }
+        
+        // 设置搜索功能
+        function setupSearch() {
+            // 设置默认日期为今天
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('end-date').value = today;
+            
+            // 设置开始日期为30天前
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+            document.getElementById('start-date').value = thirtyDaysAgo.toISOString().split('T')[0];
+            
+            // 为搜索输入添加回车键支持
+            document.getElementById('keyword-search').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchDaily();
+                }
+            });
+        }
+        
+        // 搜索日报
+        function searchDaily() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const dailyType = document.getElementById('daily-type').value;
+            const keyword = document.getElementById('keyword-search').value.toLowerCase().trim();
+            
+            let filteredData = {};
+            
+            // 按日期范围筛选
+            Object.keys(dailyData).forEach(date => {
+                if (date >= startDate && date <= endDate) {
+                    filteredData[date] = {};
+                    
+                    // 按日报类型筛选
+                    if (dailyType === 'all' || dailyType === 'ai') {
+                        if (dailyData[date].ai) {
+                            // 按关键词筛选
+                            if (!keyword || 
+                                dailyData[date].ai.title.toLowerCase().includes(keyword) ||
+                                dailyData[date].ai.description.toLowerCase().includes(keyword)) {
+                                filteredData[date].ai = dailyData[date].ai;
+                            }
+                        }
+                    }
+                    
+                    if (dailyType === 'all' || dailyType === 'gaming') {
+                        if (dailyData[date].gaming) {
+                            // 按关键词筛选
+                            if (!keyword || 
+                                dailyData[date].gaming.title.toLowerCase().includes(keyword) ||
+                                dailyData[date].gaming.description.toLowerCase().includes(keyword)) {
+                                filteredData[date].gaming = dailyData[date].gaming;
+                            }
+                        }
+                    }
+                    
+                    // 如果该日期没有符合条件的日报，删除该日期
+                    if (Object.keys(filteredData[date]).length === 0) {
+                        delete filteredData[date];
+                    }
+                }
+            });
+            
+            // 渲染筛选后的时间线
+            renderTimeline(filteredData);
+            
+            // 更新统计信息
+            updateFilteredStats(filteredData);
+            
+            // 显示搜索结果提示
+            const resultCount = Object.keys(filteredData).length;
+            const searchInfo = document.createElement('div');
+            searchInfo.className = 'search-info';
+            searchInfo.style.cssText = 'margin-top: 20px; padding: 15px; background: #e8f4fd; border-radius: 8px; color: #2c3e50;';
+            
+            let infoText = `找到 ${resultCount} 天的日报`;
+            if (keyword) {
+                infoText += `，包含关键词"${keyword}"`;
+            }
+            if (dailyType !== 'all') {
+                infoText += `，类型：${dailyType === 'ai' ? 'AI日报' : '游戏AI日报'}`;
+            }
+            
+            searchInfo.innerHTML = `<strong>🔍 搜索结果：</strong> ${infoText}`;
+            
+            const existingInfo = document.querySelector('.search-info');
+            if (existingInfo) {
+                existingInfo.remove();
+            }
+            
+            document.querySelector('.search-section').appendChild(searchInfo);
+        }
+        
+        // 更新筛选后的统计信息
+        function updateFilteredStats(filteredData) {
+            const dates = Object.keys(filteredData);
+            const totalAI = dates.reduce((sum, date) => sum + (filteredData[date].ai ? 1 : 0), 0);
+            const totalGaming = dates.reduce((sum, date) => sum + (filteredData[date].gaming ? 1 : 0), 0);
+            const totalArticles = dates.reduce((sum, date) => {
+                let count = 0;
+                if (filteredData[date].ai) count += filteredData[date].ai.articles;
+                if (filteredData[date].gaming) count += filteredData[date].gaming.articles;
+                return sum + count;
+            }, 0);
+            
+            document.getElementById('total-days').textContent = dates.length;
+            document.getElementById('total-ai').textContent = totalAI;
+            document.getElementById('total-gaming').textContent = totalGaming;
+            document.getElementById('total-articles').textContent = totalArticles;
+        }
+        
+        // 从JSON文件加载数据（未来扩展）
+        async function loadArchiveData() {
+            try {
+                const response = await fetch('data/daily-index.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    // 这里可以将JSON数据转换为dailyData格式
+                    console.log('归档数据加载成功:', data);
+                }
+            } catch (error) {
+                console.log('使用内置归档数据，JSON加载失败:', error);
+            }
+        }
+        
+        // 页面加载后尝试加载外部数据
+        setTimeout(loadArchiveData, 100);
+    </script>
+</body>
+</html>
