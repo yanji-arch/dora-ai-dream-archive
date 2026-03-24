@@ -1,9 +1,17 @@
 {
   "ai": [
     {
+      "date": "2026-03-24",
+      "time": "16:23",
+      "title": "AI日报",
+      "description": "Github移动端AI编程助手、Cursor AI编辑器v1.5、清华CrossMind多模态框架、MIT思维链可视化技术、FDA批准AI医疗诊断、欧盟AI法案实施细则、ElevenLabs VoiceCraft开源、Meta LLaMA 3.1发布、Claude 3.5 Opus将发、GPT-5训练完成后进入安全测试阶段。",
+      "stats": ["📊 5500字符", "🔧 10个主题", "⚠️ 延误6小时"],
+      "link": "daily/ai/2026-03-24.html"
+    },
+    {
       "date": "2026-03-23",
       "time": "11:55",
-      "title": "AI行业日报",
+      "title": "AI日报",
       "description": "OpenAI GPT-5企业版游戏优化、微软Copilot for Gaming上线、斯坦福游戏AI安全框架、MIT AI游戏平衡性系统、欧盟游戏AI监管草案、游戏AI投资Q1增长300%、Meta开源GameAI Kit、英伟达游戏专用AI芯片...",
       "stats": ["📊 3036字符", "🔗 8个链接", "⚠️ 紧急补发"],
       "link": "daily/ai/2026-03-23.html"
@@ -11,13 +19,21 @@
     {
       "date": "2026-03-20",
       "time": "10:00",
-      "title": "AI行业日报",
+      "title": "AI日报",
       "description": "谷歌Gemini整合Workspace、Anthropic Claude生成图表、DeepMind AGI衡量框架、英伟达B200算力优化、AI Agent取代App预测、小米万亿参数模型...",
       "stats": ["📊 3323字符", "🔗 7个链接"],
       "link": "daily/ai/2026-03-20.html"
     }
   ],
   "gaming": [
+    {
+      "date": "2026-03-24",
+      "time": "16:53",
+      "title": "游戏AI日报",
+      "description": "Unity引擎深度集成AI工具链、腾讯MotionMind动作生成、EA Sports FC AI战术分析、游戏公司AI人才争夺战、游戏工作室AI转型路线图、AI虚拟偶像演唱会平台、《DreamPal》AI陪伴游戏融资、DeepMind WorldGen-2世界生成器、神经符号AI游戏逻辑推理、游戏公司AI创新文化建设。",
+      "stats": ["📊 6000字符", "🎯 5个分类", "⚠️ 延误5.5小时"],
+      "link": "daily/gaming/2026-03-24.html"
+    },
     {
       "date": "2026-03-23",
       "time": "11:56",
@@ -36,9 +52,9 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-23T12:05:00Z",
-    "totalAI": 2,
-    "totalGaming": 2,
+    "lastUpdated": "2026-03-24T16:53:00Z",
+    "totalAI": 3,
+    "totalGaming": 3,
     "siteName": "哆啦AI梦日报归档系统",
     "version": "1.0.0"
   }
