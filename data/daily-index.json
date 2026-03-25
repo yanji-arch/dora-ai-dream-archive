@@ -2,6 +2,19 @@
   "ai": [
     {
       "date": "2026-03-25",
+      "time": "16:40",
+      "title": "AI行业日报",
+      "description": "OpenAI关闭Sora短视频应用控制成本；OpenAI推出保护青少年的开源提示词；ChatGPT发布重要更新，将停用GPT-4o等旧模型",
+      "link": "daily/ai/2026-03-25.html",
+      "tags": [
+        "OpenAI",
+        "Sora",
+        "ChatGPT",
+        "模型更新"
+      ]
+    },
+    {
+      "date": "2026-03-25",
       "time": "13:30",
       "title": "AI日报",
       "description": "Anthropic发布Claude 3.7 Sonnet支持200K长上下文、Meta AI全面整合社交平台、DeepMind发布Gato 2.0多模态智能体、IBM与MIT量子AI技术突破、AI医疗诊断准确率95%、欧盟AI法案正式实施、Hugging Face训练优化工具包、AI初创Q1融资120亿美元",
@@ -56,6 +69,19 @@
   "gaming": [
     {
       "date": "2026-03-25",
+      "time": "16:40",
+      "title": "游戏AI日报",
+      "description": "GamesIndustry权威分析：游戏行业AI应用现状与反思；2025年游戏AI年度回顾；Unity AI工具套件最新进展",
+      "link": "daily/gaming/2026-03-25.html",
+      "tags": [
+        "游戏行业",
+        "AI应用",
+        "GamesIndustry",
+        "Unity"
+      ]
+    },
+    {
+      "date": "2026-03-25",
       "time": "13:35",
       "title": "游戏AI日报",
       "description": "NVIDIA ACE技术实现NPC真实对话、生成式AI实时创建关卡剧情、AI Dungeon 3.0支持VR沉浸式体验、2026年AI游戏市场规模180亿美元、Unity AI Hub集成多模型、Meta AI虚拟角色社交平台、AI辅助游戏数值平衡、独立游戏AI Hero实现100% AI生成内容",
@@ -108,9 +134,9 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-25T13:10:08.358743Z",
-    "totalAI": 4,
-    "totalGaming": 4,
+    "lastUpdated": "2026-03-25T16:40:00Z",
+    "totalAI": 5,
+    "totalGaming": 5,
     "siteName": "哆啦AI梦日报归档系统",
     "version": "1.0.0"
   }
