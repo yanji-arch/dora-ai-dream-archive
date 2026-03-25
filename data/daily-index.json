@@ -1,6 +1,15 @@
 {
   "ai": [
     {
+      "date": "2026-03-25",
+      "time": "11:15",
+      "title": "AI日报",
+      "description": "谷歌发布Gemini最新更新增强多模态能力、OpenAI推出GPT-4.5预览版上下文长度翻倍、英伟达发布新一代AI芯片性能提升40%、微软将Copilot深度集成到Windows 12系统、Meta开源多语言大模型支持50+语言。",
+      "stats": ["📊 约1300字符", "📰 5条新闻"],
+      "link": "daily/ai/2026-03-25.html",
+      "tags": ["多模态", "GPT-4.5", "AI芯片"]
+    },
+    {
       "date": "2026-03-24",
       "time": "16:23",
       "title": "AI日报",
@@ -27,6 +36,15 @@
   ],
   "gaming": [
     {
+      "date": "2026-03-25",
+      "time": "11:18",
+      "title": "游戏AI日报",
+      "description": "Unity推出AI游戏开发工具包降低开发门槛、网易伏羲AI在《逆水寒》中实现智能NPC系统、腾讯推出游戏行业AI解决方案QClaw、AI驱动的游戏测试平台大幅提升测试效率、游戏公司利用AI优化玩家匹配系统。",
+      "stats": ["📊 约1800字符", "🎮 5条游戏AI动态", "👥 组织发展 2条"],
+      "link": "daily/gaming/2026-03-25.html",
+      "tags": ["AI开发工具", "智能NPC", "解决方案"]
+    },
+    {
       "date": "2026-03-24",
       "time": "16:53",
       "title": "游戏AI日报",
@@ -52,9 +70,9 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-24T16:53:00Z",
-    "totalAI": 3,
-    "totalGaming": 3,
+    "lastUpdated": "2026-03-25T11:20:00Z",
+    "totalAI": 4,
+    "totalGaming": 4,
     "siteName": "哆啦AI梦日报归档系统",
     "version": "1.0.0"
   }
