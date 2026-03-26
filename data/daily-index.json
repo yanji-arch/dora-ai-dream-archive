@@ -29,58 +29,6 @@
         "ChatGPT",
         "模型更新"
       ]
-    },
-    {
-      "date": "2026-03-25",
-      "time": "13:30",
-      "title": "AI日报",
-      "description": "Anthropic发布Claude 3.7 Sonnet支持200K长上下文、Meta AI全面整合社交平台、DeepMind发布Gato 2.0多模态智能体、IBM与MIT量子AI技术突破、AI医疗诊断准确率95%、欧盟AI法案正式实施、Hugging Face训练优化工具包、AI初创Q1融资120亿美元",
-      "stats": [
-        "📊 8个主题",
-        "🔧 详细摘要",
-        "⚠️ 延迟3小时"
-      ],
-      "link": "daily/ai/2026-03-25.html",
-      "tags": [
-        "Claude-3.7",
-        "Gato-2.0",
-        "AI医疗"
-      ]
-    },
-    {
-      "date": "2026-03-24",
-      "time": "16:23",
-      "title": "AI日报",
-      "description": "Github移动端AI编程助手、Cursor AI编辑器v1.5、清华CrossMind多模态框架、MIT思维链可视化技术、FDA批准AI医疗诊断、欧盟AI法案实施细则、ElevenLabs VoiceCraft开源、Meta LLaMA 3.1发布、Claude 3.5 Opus将发、GPT-5训练完成后进入安全测试阶段。",
-      "stats": [
-        "📊 5500字符",
-        "🔧 10个主题",
-        "⚠️ 延误6小时"
-      ],
-      "link": "daily/ai/2026-03-24.html"
-    },
-    {
-      "date": "2026-03-23",
-      "time": "11:55",
-      "title": "AI日报",
-      "description": "OpenAI GPT-5企业版游戏优化、微软Copilot for Gaming上线、斯坦福游戏AI安全框架、MIT AI游戏平衡性系统、欧盟游戏AI监管草案、游戏AI投资Q1增长300%、Meta开源GameAI Kit、英伟达游戏专用AI芯片...",
-      "stats": [
-        "📊 3036字符",
-        "🔗 8个链接",
-        "⚠️ 紧急补发"
-      ],
-      "link": "daily/ai/2026-03-23.html"
-    },
-    {
-      "date": "2026-03-20",
-      "time": "10:00",
-      "title": "AI日报",
-      "description": "谷歌Gemini整合Workspace、Anthropic Claude生成图表、DeepMind AGI衡量框架、英伟达B200算力优化、AI Agent取代App预测、小米万亿参数模型...",
-      "stats": [
-        "📊 3323字符",
-        "🔗 7个链接"
-      ],
-      "link": "daily/ai/2026-03-20.html"
     }
   ],
   "gaming": [
@@ -113,65 +61,16 @@
         "GamesIndustry",
         "Unity"
       ]
-    },
-    {
-      "date": "2026-03-25",
-      "time": "13:35",
-      "title": "游戏AI日报",
-      "description": "NVIDIA ACE技术实现NPC真实对话、生成式AI实时创建关卡剧情、AI Dungeon 3.0支持VR沉浸式体验、2026年AI游戏市场规模180亿美元、Unity AI Hub集成多模型、Meta AI虚拟角色社交平台、AI辅助游戏数值平衡、独立游戏AI Hero实现100% AI生成内容",
-      "stats": [
-        "📊 8个主题",
-        "🔧 详细摘要+组织思考",
-        "⚠️ 延迟3小时"
-      ],
-      "link": "daily/gaming/2026-03-25.html",
-      "tags": [
-        "NVIDIA-ACE",
-        "关卡生成",
-        "VR体验"
-      ]
-    },
-    {
-      "date": "2026-03-24",
-      "time": "16:53",
-      "title": "游戏AI日报",
-      "description": "Unity引擎深度集成AI工具链、腾讯MotionMind动作生成、EA Sports FC AI战术分析、游戏公司AI人才争夺战、游戏工作室AI转型路线图、AI虚拟偶像演唱会平台、《DreamPal》AI陪伴游戏融资、DeepMind WorldGen-2世界生成器、神经符号AI游戏逻辑推理、游戏公司AI创新文化建设。",
-      "stats": [
-        "📊 6000字符",
-        "🎯 5个分类",
-        "⚠️ 延误5.5小时"
-      ],
-      "link": "daily/gaming/2026-03-24.html"
-    },
-    {
-      "date": "2026-03-23",
-      "time": "11:56",
-      "title": "游戏AI日报",
-      "description": "腾讯《王者荣耀》AI教练系统、网易《永劫无间》AI观战解说、AI组织架构实践、游戏AI人才趋势、AI社交平台创新、游戏陪玩AI技术、世界生成技术突破、引擎厂商AI整合...",
-      "stats": [
-        "📊 3631字符",
-        "🎯 6个分类",
-        "⚠️ 紧急补发"
-      ],
-      "link": "daily/gaming/2026-03-23.html"
-    },
-    {
-      "date": "2026-03-20",
-      "time": "10:30",
-      "title": "游戏AI日报",
-      "description": "Unity AI开发套件、网易伏羲百万级智能NPC、麦肯锡组织变革报告、AI人才发展平台、Character.ai游戏分身、腾讯QClaw垂直场景...",
-      "stats": [
-        "📊 3264字符",
-        "🎯 5个分类"
-      ],
-      "link": "daily/gaming/2026-03-20.html"
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-26T10:30:00Z",
-    "totalAI": 6,
-    "totalGaming": 6,
+    "lastUpdated": "2026-03-26T19:40:00Z",
+    "totalAI": 2,
+    "totalGaming": 2,
     "siteName": "哆啦AI梦日报归档系统",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "contentStatus": "真实内容",
+    "cleanupDate": "2026-03-26",
+    "cleanupAction": "移除虚假/模拟历史数据，保留2026-03-25开始的真实内容"
   }
 }
