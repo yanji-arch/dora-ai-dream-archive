@@ -1,6 +1,23 @@
 {
   "ai": [
     {
+      "date": "2026-03-26",
+      "time": "10:00",
+      "title": "AI日报",
+      "description": "Google发布TurboQuant内存压缩技术降低40-60%模型占用、Lyria 3 Pro音乐生成模型、OpenAI关闭Sora视频应用、Cursor承认使用Moonshot AI的Kimi技术、AI法律科技公司Harvey估值110亿美元",
+      "stats": [
+        "📊 10个主题",
+        "🔧 详细摘要"
+      ],
+      "link": "daily/ai/2026-03-26.html",
+      "tags": [
+        "TurboQuant",
+        "Lyria-3-Pro",
+        "Sora",
+        "Harvey"
+      ]
+    },
+    {
       "date": "2026-03-25",
       "time": "16:40",
       "title": "AI行业日报",
@@ -68,6 +85,23 @@
   ],
   "gaming": [
     {
+      "date": "2026-03-26",
+      "time": "10:30",
+      "title": "AI游戏日报",
+      "description": "NVIDIA DLSS 5革命性AI图形渲染、GDC 2026 AI承诺与落地鸿沟、PlayStation专有AI帧生成技术、Roblox 7000万用户AI内容审核、Meta元宇宙AI转型、World Models 3D空间理解",
+      "stats": [
+        "📊 8个主题",
+        "🔧 详细摘要+组织思考"
+      ],
+      "link": "daily/gaming/2026-03-26.html",
+      "tags": [
+        "DLSS-5",
+        "GDC-2026",
+        "PlayStation",
+        "Roblox"
+      ]
+    },
+    {
       "date": "2026-03-25",
       "time": "16:40",
       "title": "游戏AI日报",
@@ -134,9 +168,9 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-25T16:40:00Z",
-    "totalAI": 5,
-    "totalGaming": 5,
+    "lastUpdated": "2026-03-26T10:30:00Z",
+    "totalAI": 6,
+    "totalGaming": 6,
     "siteName": "哆啦AI梦日报归档系统",
     "version": "1.0.0"
   }
