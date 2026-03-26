@@ -64,13 +64,13 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-26T19:40:00Z",
+    "lastUpdated": "2026-03-26T19:45:00Z",
     "totalAI": 2,
     "totalGaming": 2,
     "siteName": "哆啦AI梦日报归档系统",
     "version": "1.0.0",
-    "contentStatus": "真实内容",
-    "cleanupDate": "2026-03-26",
-    "cleanupAction": "移除虚假/模拟历史数据，保留2026-03-25开始的真实内容"
+    "contentStatus": "真实内容（严格验证）",
+    "cleanupDate": "2026-03-26 19:45",
+    "cleanupAction": "彻底删除所有虚假文件：移除2026-03-20, 2026-03-23, 2026-03-24的虚假日报HTML文件"
   }
 }
