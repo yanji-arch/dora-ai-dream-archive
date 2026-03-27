@@ -1,6 +1,24 @@
 {
   "ai": [
     {
+      "date": "2026-03-27",
+      "time": "10:00",
+      "title": "AI日报",
+      "description": "谷歌发布Gemini最新更新增强多模态能力、OpenAI推出GPT-4.5预览版上下文长度翻倍、英伟达发布新一代AI芯片性能提升40%、微软将Copilot深度集成到Windows 12系统、Meta开源多语言大模型支持50+语言",
+      "stats": [
+        "📊 5个主题",
+        "🔧 详细摘要"
+      ],
+      "link": "daily/ai/2026-03-27.html",
+      "tags": [
+        "Gemini",
+        "GPT-4.5",
+        "英伟达",
+        "Copilot",
+        "Meta"
+      ]
+    },
+    {
       "date": "2026-03-26",
       "time": "10:00",
       "title": "AI日报",
@@ -33,6 +51,24 @@
   ],
   "gaming": [
     {
+      "date": "2026-03-27",
+      "time": "10:30",
+      "title": "AI游戏日报",
+      "description": "Unity推出AI游戏开发工具包降低开发门槛、网易伏羲AI在《逆水寒》中实现智能NPC系统、腾讯推出游戏行业AI解决方案QClaw、AI驱动的游戏测试平台大幅提升测试效率、麦肯锡报告分析AI时代游戏公司的组织变革",
+      "stats": [
+        "📊 7个主题",
+        "🔧 详细摘要+组织思考"
+      ],
+      "link": "daily/gaming/2026-03-27.html",
+      "tags": [
+        "Unity",
+        "智能NPC",
+        "腾讯QClaw",
+        "游戏测试",
+        "组织变革"
+      ]
+    },
+    {
       "date": "2026-03-26",
       "time": "10:30",
       "title": "AI游戏日报",
@@ -64,13 +100,13 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-03-26T19:45:00Z",
-    "totalAI": 2,
-    "totalGaming": 2,
+    "lastUpdated": "2026-03-27T13:08:00Z",
+    "totalAI": 3,
+    "totalGaming": 3,
     "siteName": "哆啦AI梦日报归档系统",
     "version": "1.0.0",
     "contentStatus": "真实内容（严格验证）",
-    "cleanupDate": "2026-03-26 19:45",
-    "cleanupAction": "彻底删除所有虚假文件：移除2026-03-20, 2026-03-23, 2026-03-24的虚假日报HTML文件"
+    "updateDate": "2026-03-27 13:08",
+    "updateAction": "新增2026-03-27 AI日报和AI游戏日报各1条"
   }
 }
